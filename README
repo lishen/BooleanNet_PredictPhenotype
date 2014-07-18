@@ -1,0 +1,34 @@
+Number of nodes in the network has to be specified during compilation. 
+Predicted network has 8 nodes and curated network has 29 nodes.
+
+Compile:
+g++ -O3 -DNODES=8 boolfix.cpp -o boolfix_8
+
+boolfix_8 is executable. Any network with 8 nodes can be used with this.
+
+The edge filename, the node property filename and output file name  must be specified as follows:
+
+./boolfix_8 sporulation_edge.txt sporulation_node.txt sporulation
+
+The format of sporulation_edge.txt file is as follows:
+parent_node_name \tab child_node_name \tab activating/repressing_edge(+/-)
+
+The format of sporulation_node.txt file is:
+node_name \tab is_selfdegraded (y/n) \tab is_AND_node(y/n) \tab clamp_value(0/1/-1)
+
+hetero-dimer formation is modeled as AND node. If a node is AND node, then it receives
+input 1 if and only if all its parents take value 1. If a node's clamped value is -1, then
+it is not clamped.
+
+There are two output files:
+sporulation_matrix.txt and sporulation_fixedpoints.txt. The former is just connectivity matrix of sporulation network and the latter is the list of fixedpoints and the corresponding 
+basin sizes. 
+
+For the curated network, just do the same:
+
+Compile:
+g++ -O3 -DNODES=29 boolfix.cpp -o boolfix_29
+
+boolfix_29 is executable. Any network with 29 nodes can be used with this.
+
+./boolfix_29 spor_edge.txt spor_node.txt spor

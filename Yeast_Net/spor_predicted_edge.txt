@@ -1,0 +1,14 @@
+Ume6	Ume6-Ime1	+
+Ime1	Ume6-Ime1	+
+Ndt80	Ime1	+
+Ndt80	Ndt80	+
+Ndt80	MMG	+
+Ndt80	Ime2	+
+Sum1	Ndt80	-
+Sum1	MMG	-
+Ime2	Ime1	-
+Ime2	Sum1	-
+Ime2	Ndt80	+
+Ume6-Ime1	Ndt80	+
+Ume6-Ime1	Ime2	+
+Ume6-Ime1	EMG	+
